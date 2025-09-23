@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIEG | Linha do Tempo: O Tarifaço dos EUA e os Impactos para a Indústria Goiana</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Configurações Gerais e Cores FIEG --- */
+        :root {
+            --cor-primaria-fieg: #003366; 
+            --cor-secundaria-fieg: #009933; 
+            --cor-texto: #333333;
+            --cor-texto-claro: #f8f9fa;
+            --cor-fundo: #f4f6f9;
+            --cor-linha-tempo: #ccd5ae;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        /* --- Cabeçalho da Página --- */
+        .page-header {
+            background-color: var(--cor-primaria-fieg);
+            color: var(--cor-texto-claro);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 6px solid var(--cor-secundaria-fieg);
+        }
+
+        .page-header img {
+            height: 50px;
+            margin-bottom: 20px;
+            /* Filtro para simular logo em cor negativa (branca) */
+            filter: brightness(0) invert(1);
+        }
+
+        .page-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* --- Estrutura da Linha do Tempo --- */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--cor-linha-tempo);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container.left { left: 0; }
+        .timeline-container.right { left: 50%; }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 22px;
+            border-style: solid;
+        }
+
+        .timeline-container.right::after {
+            left: -15px;
+            border-width: 15px 15px 15px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .timeline-container.left::after {
+            right: -15px;
+            border-width: 15px 0 15px 15px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .timeline-container .icon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            right: -20px;
+            top: 25px;
+            background-color: var(--cor-secundaria-fieg);
+            border: 3px solid var(--cor-primaria-fieg);
+            border-radius: 50%;
+            z-index: 1;
+            font-size: 1.2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .timeline-container.right .icon { left: -20px; }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--cor-primaria-fieg);
+        }
+
+        .timeline-content h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--cor-primaria-fieg);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cor-secundaria-fieg);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .timeline-content strong {
+            font-weight: 600;
+            color: var(--cor-texto);
+        }
+        
+        /* --- Responsividade --- */
+        @media screen and (max-width: 768px) {
+            .timeline::after { left: 31px; }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.left, .timeline-container.right { left: 0%; }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 15px;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .timeline-container .icon { left: 11px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="page-header">
+        <img src="https://fieg.com.br/midia/fieg-negativa.png" alt="Logo FIEG">
+        <h1>Linha do Tempo: O Tarifaço dos EUA</h1>
+        <p>Acompanhe os principais eventos, impactos e respostas da indústria brasileira e goiana frente às medidas comerciais impostas pelos Estados Unidos em 2025.</p>
+    </header>
+
+    <div class="timeline">
+
+        <div class="timeline-container right">
+            <div class="icon">🔍</div>
+            <div class="timeline-content">
+                <h2>Início de Julho de 2025</h2>
+                <h3>Primeiros Sinais e Ameaças</h3>
+                <p>O governo norte-americano sinaliza, por meio de canais diplomáticos e declarações públicas, a possibilidade de impor barreiras comerciais ao Brasil. A justificativa apresentada é de cunho político, gerando apreensão imediata no setor industrial brasileiro.</p>
+            </div>
+        </div>
+
+        <div class="timeline-container left">
+            <div class="icon">🏛️</div>
+            <div class="timeline-content">
+                <h2>Meados de Julho de 2025</h2>
+                <h3>FIEG Emite Alerta e Inicia Articulação</h3>
+                <p>Antecipando-se à oficialização da medida, a <strong>FIEG emite uma nota técnica preliminar</strong> alertando sobre os riscos para a indústria goiana. A Federação inicia uma articulação com a bancada goiana no Congresso e com a CNI para preparar uma resposta unificada em defesa do setor.</p>
+            </div>
+        </div>
+
+        <div class="timeline-container right">
+            <div class="icon">📜</div>
+            <div class="timeline-content">
+                <h2>Início de Agosto de 2025</h2>
+                <h3>EUA Implementam o "Tarifaço"</h3>
+                <p>O governo dos Estados Unidos oficializa a imposição de uma sobretaxa que eleva a alíquota para 50% sobre diversos produtos brasileiros. A medida entra em vigor, gerando suspensão de contratos e forte instabilidade no comércio bilateral.</p>
+            </div>
+        </div>
+
+        <div class="timeline-container left">
+            <div class="icon">📉</div>
+            <div class="timeline-content">
+                <h2>Primeira Quinzena de Agosto de 2025</h2>
+                <h3>Impacto Direto e Posicionamento da FIEG</h3>
+                <p>A indústria de Goiás sente os efeitos. A <strong>FIEG divulga um estudo de impacto</strong> estimando uma retração potencial de <strong>R$ 1,36 bilhão no PIB estadual</strong> e perdas diretas em setores-chave. A Federação se posiciona publicamente, defendendo o diálogo e a negociação como únicos caminhos.</p>
+            </div>
+        </div>
+
+        <div class="timeline-container right">
+            <div class="icon">🏛️</div>
+            <div class="timeline-content">
+                <h2>13 de Agosto de 2025</h2>
+                <h3>Governo Federal Lança a MP "Brasil Soberano"</h3>
+                <p>Em resposta à crise, o Governo Federal edita a Medida Provisória "Brasil Soberano", um pacote de apoio às empresas afetadas com linhas de crédito emergencial de <strong>R$ 35 bilhões</strong> e alívio tributário, com a contrapartida de manutenção de empregos.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-container left">
+            <div class="icon">🇬🇴</div>
+            <div class="timeline-content">
+                <h2>Final de Agosto de 2025</h2>
+                <h3>Goiás Lança Fundo de Apoio na B3</h3>
+                <p>Goiás se destaca como <strong>o primeiro estado a reagir com medidas concretas</strong>. O Governo do Estado, em uma ação articulada com a <strong>FIEG</strong>, lança um fundo na B3 que disponibiliza <strong>R$ 628 milhões</strong> para as empresas goianas, permitindo o uso de créditos de ICMS como garantia.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-container right">
+            <div class="icon">🤝</div>
+            <div class="timeline-content">
+                <h2>Início de Setembro de 2025</h2>
+                <h3>FIEG em Missão nos EUA pela Indústria</h3>
+                <p>A <strong>FIEG integra uma missão empresarial organizada pela CNI em Washington</strong>. A delegação participa de audiências públicas e se reúne com entidades do setor privado americano para construir alianças, defender a indústria goiana e buscar caminhos para a retomada do diálogo e a reversão das tarifas.</p>
+            </div>
+        </div>
+
+        <div class="timeline-container left">
+            <div class="icon">🇺🇳</div>
+            <div class="timeline-content">
+                <h2>23 de Setembro de 2025</h2>
+                <h3>Sinalização de Diálogo na Assembleia da ONU</h3>
+                <p>Durante a 80ª Assembleia Geral da ONU, ocorre um breve encontro entre os presidentes do Brasil e dos EUA. O presidente americano anuncia publicamente que <strong>concordou em se encontrar com o presidente brasileiro na semana seguinte</strong> para discutir a questão, abrindo uma nova janela para a negociação diplomática.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
