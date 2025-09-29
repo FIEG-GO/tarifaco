@@ -53,7 +53,7 @@
         .timeline {
             display: inline-flex;
             align-items: center;
-            height: 500px;
+            height: 500px; /* Altura fixa para alinhar os itens */
         }
         .timeline::before {
             content: '';
@@ -67,8 +67,8 @@
         }
         
         .timeline-item {
-            display: inline-flex;
-            align-items: center;
+            display: inline-flex; /* Alterado para flex para alinhar tag e card */
+            align-items: stretch; /* Faz a tag e o card terem a mesma altura */
             width: 420px;
             margin: 0 40px;
             white-space: normal;
@@ -76,19 +76,23 @@
             opacity: 0;
             transform: scale(0.95);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
         .timeline-item.is-visible { opacity: 1; transform: scale(1); }
 
         .timeline-tag {
             background-color: var(--cor-primaria-fieg);
             color: white;
-            padding: 15px 10px;
+            padding: 10px;
             writing-mode: vertical-lr;
             transform: rotate(180deg);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .timeline-marker {
@@ -105,7 +109,6 @@
         
         .timeline-card {
             background: white;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             border-top: 5px solid var(--cor-secundaria-fieg);
             padding: 25px;
             width: 100%;
@@ -151,8 +154,7 @@
         .scenarios-section h2 { font-size: 2.2rem; color: var(--cor-primaria-fieg); font-weight: 700; margin-bottom: 30px; }
         .scenarios-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .scenario-card { background-color: white; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); text-align: left; border-top: 6px solid; }
-        .scenario-card h3 { font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; }
-        .scenario-card .icon { font-size: 2rem; margin-right: 15px; }
+        .scenario-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
         .scenario-card.optimistic { border-color: var(--cor-secundaria-fieg); }
         .scenario-card.optimistic h3 { color: var(--cor-secundaria-fieg); }
         .scenario-card.realistic { border-color: var(--cor-destaque); }
@@ -167,6 +169,7 @@
             .prev { left: -10px; }
             .next { right: -10px; }
             .timeline-item { width: 300px; margin: 0 15px; }
+            .timeline { height: auto; padding-bottom: 50px; }
         }
 
     </style>
@@ -260,11 +263,11 @@
 
         <div class="container">
             <section class="scenarios-section">
-                <h2>A Reunião da Semana: 3 Cenários para o Futuro</h2>
+                <h2>Cenários para o Futuro: a reunião da semana</h2>
                 <div class="scenarios-container">
-                    <div class="scenario-card optimistic"><h3><span class="icon">✅</span>Otimista</h3><p>Acordo para a **retirada completa e imediata das tarifas**. O diálogo prevalece e a relação comercial é restaurada.</p></div>
-                    <div class="scenario-card realistic"><h3><span class="icon">🤝</span>Realista</h3><p>**Compromisso de meio-termo**, com redução parcial das tarifas ou criação de quotas de isenção, e formação de grupos de trabalho.</p></div>
-                    <div class="scenario-card pessimistic"><h3><span class="icon">❌</span>Pessimista</h3><p>**Desacordo total**, manutenção das tarifas e risco de escalada para uma guerra comercial com medidas de reciprocidade.</p></div>
+                    <div class="scenario-card optimistic"><h3>Otimista</h3><p>Acordo para a <strong>retirada completa e imediata das tarifas</strong>. O diálogo prevalece e a relação comercial é restaurada.</p></div>
+                    <div class="scenario-card realistic"><h3>Realista</h3><p><strong>Compromisso de meio-termo</strong>, com redução parcial das tarifas ou criação de quotas de isenção, e formação de grupos de trabalho.</p></div>
+                    <div class="scenario-card pessimistic"><h3>Pessimista</h3><p><strong>Desacordo total</strong>, manutenção das tarifas e risco de escalada para uma guerra comercial com medidas de reciprocidade.</p></div>
                 </div>
             </section>
         </div>
@@ -294,8 +297,8 @@
             const modals = document.querySelectorAll('.modal-overlay');
             const closeButtons = document.querySelectorAll('.modal-close');
 
-            nextBtn.addEventListener('click', () => { scroller.scrollBy({ left: 400, behavior: 'smooth' }); });
-            prevBtn.addEventListener('click', () => { scroller.scrollBy({ left: -400, behavior: 'smooth' }); });
+            nextBtn.addEventListener('click', () => { scroller.scrollBy({ left: 460, behavior: 'smooth' }); });
+            prevBtn.addEventListener('click', () => { scroller.scrollBy({ left: -460, behavior: 'smooth' }); });
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
