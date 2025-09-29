@@ -53,7 +53,8 @@
         .timeline {
             display: inline-flex;
             align-items: center;
-            height: 500px; /* Altura fixa para alinhar os itens */
+            height: 500px; 
+            position: relative;
         }
         .timeline::before {
             content: '';
@@ -64,15 +65,17 @@
             height: 4px;
             width: 100%;
             background-color: #ccc;
+            z-index: 1;
         }
         
         .timeline-item {
-            display: inline-flex; /* Alterado para flex para alinhar tag e card */
-            align-items: stretch; /* Faz a tag e o card terem a mesma altura */
+            display: inline-flex;
+            align-items: stretch;
             width: 420px;
             margin: 0 40px;
             white-space: normal;
             position: relative;
+            z-index: 2; /* Garante que o item fique acima da linha */
             opacity: 0;
             transform: scale(0.95);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -93,18 +96,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .timeline-marker {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
-            background: var(--cor-fundo);
-            border: 4px solid var(--cor-primaria-fieg);
-            z-index: 2;
         }
         
         .timeline-card {
@@ -187,7 +178,6 @@
                 <div class="timeline">
                     
                     <div class="timeline-item">
-                        <div class="timeline-marker"></div>
                         <div class="timeline-tag">Julho 2025</div>
                         <div class="timeline-card">
                             <h2>EUA Sinalizam Barreiras</h2>
@@ -196,7 +186,6 @@
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-marker"></div>
                         <div class="timeline-tag">Fim de Julho 2025</div>
                         <div class="timeline-card">
                             <h2>Protagonismo de Goiás</h2>
@@ -206,7 +195,6 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-marker"></div>
                         <div class="timeline-tag">Início de Agosto 2025</div>
                         <div class="timeline-card">
                             <h2>Implementação do Tarifaço</h2>
@@ -216,7 +204,6 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-marker"></div>
                         <div class="timeline-tag">13 de Agosto 2025</div>
                         <div class="timeline-card">
                             <h2>Governo Federal Reage</h2>
@@ -226,7 +213,6 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-marker"></div>
                         <div class="timeline-tag">Fim de Agosto 2025</div>
                         <div class="timeline-card">
                             <h2>Goiás Lança Fundo de Apoio</h2>
@@ -236,7 +222,6 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-marker"></div>
                         <div class="timeline-tag">Início de Setembro 2025</div>
                         <div class="timeline-card">
                             <h2>FIEG em Missão nos EUA</h2>
@@ -246,7 +231,6 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-marker"></div>
                         <div class="timeline-tag">23 de Setembro 2025</div>
                         <div class="timeline-card">
                             <h2>Sinal de Diálogo na ONU</h2>
@@ -263,7 +247,7 @@
 
         <div class="container">
             <section class="scenarios-section">
-                <h2>Cenários para o Futuro: a reunião da semana</h2>
+                <h2>29/9 - Cenários para o Futuro: a reunião da semana</h2>
                 <div class="scenarios-container">
                     <div class="scenario-card optimistic"><h3>Otimista</h3><p>Acordo para a <strong>retirada completa e imediata das tarifas</strong>. O diálogo prevalece e a relação comercial é restaurada.</p></div>
                     <div class="scenario-card realistic"><h3>Realista</h3><p><strong>Compromisso de meio-termo</strong>, com redução parcial das tarifas ou criação de quotas de isenção, e formação de grupos de trabalho.</p></div>
