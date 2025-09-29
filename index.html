@@ -14,9 +14,9 @@
             --cor-primaria-fieg: #003366; 
             --cor-secundaria-fieg: #009933; 
             --cor-destaque: #ffc107;
-            --cor-texto: #333;
+            --cor-texto: #212529;
             --cor-texto-claro: #f8f9fa;
-            --cor-fundo: #eef2f5;
+            --cor-fundo: #f4f7f9;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +25,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--cor-fundo);
             color: var(--cor-texto);
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003366' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003366' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm10 2c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm-20-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm10 2c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zM20 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm10 2c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zM0 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm10 2c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             overflow-x: hidden;
         }
 
@@ -39,64 +39,53 @@
         .page-header h1 { font-size: 2.5rem; font-weight: 800; color: var(--cor-primaria-fieg); }
         .page-header p { font-size: 1.1rem; color: #555; max-width: 800px; margin: 10px auto 0; }
 
-        .timeline-wrapper {
-            position: relative;
-            width: 100%;
-            padding: 0 50px;
-        }
+        .timeline-wrapper { position: relative; width: 100%; padding: 0 50px; }
         .timeline-scroller {
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
-            padding: 30px 10px;
+            padding: 40px 10px 50px 10px;
             scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+            -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
             scrollbar-color: var(--cor-secundaria-fieg) #ddd;
         }
         .timeline {
             display: inline-flex;
             position: relative;
-            padding-top: 50px; /* Space for date */
-            padding-bottom: 50px; /* Space for line */
         }
         .timeline::before {
             content: '';
             position: absolute;
             bottom: 20px;
             left: 0;
-            height: 8px;
+            height: 4px;
             width: 100%;
-            background: linear-gradient(90deg, var(--cor-secundaria-fieg), var(--cor-primaria-fieg));
-            border-radius: 4px;
+            background-color: #ccc;
         }
         
         .timeline-item {
             display: inline-block;
             vertical-align: top;
-            width: 320px;
-            margin: 0 25px;
+            width: 340px;
+            margin: 0 30px;
             white-space: normal;
             position: relative;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .timeline-item.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .timeline-item.is-visible { opacity: 1; transform: translateY(0); }
 
-        .timeline-dot {
+        .timeline-marker {
             position: absolute;
-            bottom: 13px;
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 22px;
-            height: 22px;
-            background: white;
-            border: 5px solid var(--cor-primaria-fieg);
-            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--cor-fundo);
+            border: 4px solid var(--cor-primaria-fieg);
             z-index: 2;
         }
         .timeline-date {
@@ -104,32 +93,30 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--cor-primaria-fieg);
-            color: white;
+            background-color: var(--cor-fundo);
+            color: var(--cor-primaria-fieg);
             padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
+            border: 1px solid #ddd;
         }
         
         .timeline-card {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            padding: 20px;
-            border-top: 6px solid var(--cor-secundaria-fieg);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--cor-secundaria-fieg);
+            padding: 25px;
         }
-        .timeline-card h2 { color: var(--cor-primaria-fieg); font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .timeline-card h2 { color: var(--cor-primaria-fieg); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
         .timeline-card p { font-size: 0.95rem; line-height: 1.6; }
         .timeline-card strong { color: var(--cor-primaria-fieg); font-weight: 700; }
-        .timeline-card img { width: 100%; border-radius: 8px; margin-top: 15px; }
+        .timeline-card img { width: 100%; margin-top: 15px; }
         
         .modal-trigger {
             background-color: var(--cor-primaria-fieg);
             color: white;
             border: none;
             padding: 10px 15px;
-            border-radius: 5px;
             cursor: pointer;
             margin-top: 15px;
             font-weight: 600;
@@ -144,64 +131,32 @@
             background-color: var(--cor-primaria-fieg);
             color: white;
             border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 24px;
+            width: 45px;
+            height: 45px;
+            font-size: 28px;
             cursor: pointer;
             z-index: 10;
+            opacity: 0.8;
+            transition: opacity 0.3s, background-color 0.3s;
         }
-        .nav-button:hover { background-color: var(--cor-secundaria-fieg); }
+        .nav-button:hover { background-color: var(--cor-secundaria-fieg); opacity: 1; }
         .prev { left: 5px; }
         .next { right: 5px; }
 
-        /* Modal Interativo */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 51, 102, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 51, 102, 0.7); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
         .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-            transform: translateY(-50px);
-            transition: transform 0.3s ease;
-        }
+        .modal-content { background: white; padding: 30px; max-width: 600px; width: 90%; position: relative; transform: translateY(-50px); transition: transform 0.3s ease; }
         .modal-overlay.active .modal-content { transform: translateY(0); }
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .modal-content h3 { color: var(--cor-primaria-fieg); margin-bottom: 20px; font-size: 1.5rem;}
+        .modal-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; }
+        .modal-content h3 { color: var(--cor-primaria-fieg); margin-bottom: 20px; font-size: 1.5rem; }
         .modal-content ul { list-style: none; padding-left: 0; }
         .modal-content li { margin-bottom: 15px; padding-left: 25px; position: relative; }
         .modal-content li::before { content: '✓'; color: var(--cor-secundaria-fieg); position: absolute; left: 0; font-weight: bold; }
         
-        /* Cenários */
         .scenarios-section { text-align: center; padding: 40px 0; }
         .scenarios-section h2 { font-size: 2.2rem; color: var(--cor-primaria-fieg); font-weight: 700; margin-bottom: 30px; }
         .scenarios-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .scenario-card { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); text-align: left; border-top: 6px solid; }
+        .scenario-card { background-color: white; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); text-align: left; border-top: 6px solid; }
         .scenario-card h3 { font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; }
         .scenario-card .icon { font-size: 2rem; margin-right: 15px; }
         .scenario-card.optimistic { border-color: var(--cor-secundaria-fieg); }
@@ -210,6 +165,15 @@
         .scenario-card.realistic h3 { color: #b8860b; }
         .scenario-card.pessimistic { border-color: #dc3545; }
         .scenario-card.pessimistic h3 { color: #dc3545; }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .timeline-wrapper { padding: 0 20px; }
+            .nav-button { width: 35px; height: 35px; font-size: 20px; }
+            .prev { left: -10px; }
+            .next { right: -10px; }
+        }
+
     </style>
 </head>
 <body>
@@ -226,7 +190,7 @@
                     
                     <div class="timeline-item">
                         <div class="timeline-date">Julho 2025</div>
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <h2>EUA Sinalizam Barreiras</h2>
                             <p>O governo norte-americano sinaliza publicamente a possibilidade de impor barreiras comerciais ao Brasil, gerando apreensão imediata no setor industrial.</p>
@@ -235,7 +199,7 @@
                     
                     <div class="timeline-item">
                         <div class="timeline-date">Final de Julho 2025</div>
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <h2>Protagonismo de Goiás</h2>
                             <p>Em uma ação de vanguarda, o <strong>Governo de Goiás convoca a FIEG</strong> e o setor produtivo para construir, em conjunto, uma resposta proativa à crise iminente.</p>
@@ -245,7 +209,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-date">Início de Agosto 2025</div>
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <h2>Implementação do Tarifaço</h2>
                             <p>Os EUA oficializam a sobretaxa que eleva a alíquota para 50%, causando a suspensão imediata de contratos e impactando a indústria de Goiás.</p>
@@ -255,7 +219,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-date">13 de Agosto 2025</div>
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <h2>Governo Federal Reage</h2>
                             <p>O Governo Federal lança o <strong>Plano Brasil Soberano</strong>, um pacote de medidas para mitigar os impactos, incluindo crédito emergencial e alívio fiscal.</p>
@@ -265,7 +229,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-date">Final de Agosto 2025</div>
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <h2>Goiás Lança Fundo de Apoio</h2>
                             <p>Consolidando seu protagonismo, o <strong>Governo de Goiás lança o primeiro fundo do Brasil</strong>, de R$ 628 milhões, para socorrer as empresas goianas, em ação articulada com a FIEG.</p>
@@ -275,7 +239,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-date">Início de Setembro 2025</div>
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <h2>FIEG em Missão nos EUA</h2>
                             <p>A <strong>FIEG integra a missão empresarial da CNI em Washington</strong>, defendendo a indústria goiana em reuniões estratégicas para buscar a retomada do diálogo.</p>
@@ -285,7 +249,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-date">23 de Setembro 2025</div>
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <h2>Sinal de Diálogo na ONU</h2>
                             <p>Durante a Assembleia Geral da ONU, os presidentes do Brasil e dos EUA conversam e <strong>agendam uma reunião para a semana seguinte</strong>, abrindo uma nova janela para a negociação.</p>
@@ -335,8 +299,8 @@
             const modals = document.querySelectorAll('.modal-overlay');
             const closeButtons = document.querySelectorAll('.modal-close');
 
-            nextBtn.addEventListener('click', () => { scroller.scrollBy({ left: 370, behavior: 'smooth' }); });
-            prevBtn.addEventListener('click', () => { scroller.scrollBy({ left: -370, behavior: 'smooth' }); });
+            nextBtn.addEventListener('click', () => { scroller.scrollBy({ left: 390, behavior: 'smooth' }); });
+            prevBtn.addEventListener('click', () => { scroller.scrollBy({ left: -390, behavior: 'smooth' }); });
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
