@@ -44,7 +44,7 @@
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
-            padding: 40px 10px 50px 10px;
+            padding: 30px 10px 50px 10px;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
@@ -53,6 +53,7 @@
         .timeline {
             display: inline-flex;
             position: relative;
+            padding-top: 40px; /* CORREÇÃO: Espaço criado para a data não sobrepor o card */
         }
         .timeline::before {
             content: '';
@@ -90,7 +91,7 @@
         }
         .timeline-date {
             position: absolute;
-            top: 0;
+            top: 0; /* CORREÇÃO: Posicionado no topo do espaço de padding */
             left: 50%;
             transform: translateX(-50%);
             background-color: var(--cor-fundo);
