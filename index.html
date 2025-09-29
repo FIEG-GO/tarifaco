@@ -33,7 +33,7 @@
         
         .page-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         .page-header img { height: 50px; margin-bottom: 15px; }
         .page-header h1 { font-size: 2.5rem; font-weight: 800; color: var(--cor-primaria-fieg); }
@@ -44,7 +44,7 @@
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
-            padding: 30px 10px 50px 10px;
+            padding: 30px 10px;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
@@ -52,13 +52,14 @@
         }
         .timeline {
             display: inline-flex;
-            position: relative;
-            padding-top: 40px; /* CORREÇÃO: Espaço criado para a data não sobrepor o card */
+            align-items: center;
+            height: 500px;
         }
         .timeline::before {
             content: '';
             position: absolute;
-            bottom: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             left: 0;
             height: 4px;
             width: 100%;
@@ -66,40 +67,40 @@
         }
         
         .timeline-item {
-            display: inline-block;
-            vertical-align: top;
-            width: 340px;
-            margin: 0 30px;
+            display: inline-flex;
+            align-items: center;
+            width: 420px;
+            margin: 0 40px;
             white-space: normal;
             position: relative;
             opacity: 0;
-            transform: translateY(30px);
+            transform: scale(0.95);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .timeline-item.is-visible { opacity: 1; transform: translateY(0); }
+        .timeline-item.is-visible { opacity: 1; transform: scale(1); }
+
+        .timeline-tag {
+            background-color: var(--cor-primaria-fieg);
+            color: white;
+            padding: 15px 10px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            flex-shrink: 0;
+        }
 
         .timeline-marker {
             position: absolute;
-            bottom: 12px;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             width: 20px;
             height: 20px;
             background: var(--cor-fundo);
             border: 4px solid var(--cor-primaria-fieg);
             z-index: 2;
-        }
-        .timeline-date {
-            position: absolute;
-            top: 0; /* CORREÇÃO: Posicionado no topo do espaço de padding */
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--cor-fundo);
-            color: var(--cor-primaria-fieg);
-            padding: 5px 15px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: 1px solid #ddd;
         }
         
         .timeline-card {
@@ -107,22 +108,14 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             border-top: 5px solid var(--cor-secundaria-fieg);
             padding: 25px;
+            width: 100%;
         }
         .timeline-card h2 { color: var(--cor-primaria-fieg); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
         .timeline-card p { font-size: 0.95rem; line-height: 1.6; }
         .timeline-card strong { color: var(--cor-primaria-fieg); font-weight: 700; }
         .timeline-card img { width: 100%; margin-top: 15px; }
         
-        .modal-trigger {
-            background-color: var(--cor-primaria-fieg);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            margin-top: 15px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
+        .modal-trigger { background-color: var(--cor-primaria-fieg); color: white; border: none; padding: 10px 15px; cursor: pointer; margin-top: 15px; font-weight: 600; transition: background-color 0.3s; }
         .modal-trigger:hover { background-color: var(--cor-secundaria-fieg); }
 
         .nav-button {
@@ -173,6 +166,7 @@
             .nav-button { width: 35px; height: 35px; font-size: 20px; }
             .prev { left: -10px; }
             .next { right: -10px; }
+            .timeline-item { width: 300px; margin: 0 15px; }
         }
 
     </style>
@@ -190,8 +184,8 @@
                 <div class="timeline">
                     
                     <div class="timeline-item">
-                        <div class="timeline-date">Julho 2025</div>
                         <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Julho 2025</div>
                         <div class="timeline-card">
                             <h2>EUA Sinalizam Barreiras</h2>
                             <p>O governo norte-americano sinaliza publicamente a possibilidade de impor barreiras comerciais ao Brasil, gerando apreensão imediata no setor industrial.</p>
@@ -199,8 +193,8 @@
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-date">Final de Julho 2025</div>
                         <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Fim de Julho 2025</div>
                         <div class="timeline-card">
                             <h2>Protagonismo de Goiás</h2>
                             <p>Em uma ação de vanguarda, o <strong>Governo de Goiás convoca a FIEG</strong> e o setor produtivo para construir, em conjunto, uma resposta proativa à crise iminente.</p>
@@ -209,8 +203,8 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Início de Agosto 2025</div>
                         <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Início de Agosto 2025</div>
                         <div class="timeline-card">
                             <h2>Implementação do Tarifaço</h2>
                             <p>Os EUA oficializam a sobretaxa que eleva a alíquota para 50%, causando a suspensão imediata de contratos e impactando a indústria de Goiás.</p>
@@ -219,8 +213,8 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">13 de Agosto 2025</div>
                         <div class="timeline-marker"></div>
+                        <div class="timeline-tag">13 de Agosto 2025</div>
                         <div class="timeline-card">
                             <h2>Governo Federal Reage</h2>
                             <p>O Governo Federal lança o <strong>Plano Brasil Soberano</strong>, um pacote de medidas para mitigar os impactos, incluindo crédito emergencial e alívio fiscal.</p>
@@ -229,8 +223,8 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Final de Agosto 2025</div>
                         <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Fim de Agosto 2025</div>
                         <div class="timeline-card">
                             <h2>Goiás Lança Fundo de Apoio</h2>
                             <p>Consolidando seu protagonismo, o <strong>Governo de Goiás lança o primeiro fundo do Brasil</strong>, de R$ 628 milhões, para socorrer as empresas goianas, em ação articulada com a FIEG.</p>
@@ -239,8 +233,8 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Início de Setembro 2025</div>
                         <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Início de Setembro 2025</div>
                         <div class="timeline-card">
                             <h2>FIEG em Missão nos EUA</h2>
                             <p>A <strong>FIEG integra a missão empresarial da CNI em Washington</strong>, defendendo a indústria goiana em reuniões estratégicas para buscar a retomada do diálogo.</p>
@@ -249,8 +243,8 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">23 de Setembro 2025</div>
                         <div class="timeline-marker"></div>
+                        <div class="timeline-tag">23 de Setembro 2025</div>
                         <div class="timeline-card">
                             <h2>Sinal de Diálogo na ONU</h2>
                             <p>Durante a Assembleia Geral da ONU, os presidentes do Brasil e dos EUA conversam e <strong>agendam uma reunião para a semana seguinte</strong>, abrindo uma nova janela para a negociação.</p>
@@ -300,8 +294,8 @@
             const modals = document.querySelectorAll('.modal-overlay');
             const closeButtons = document.querySelectorAll('.modal-close');
 
-            nextBtn.addEventListener('click', () => { scroller.scrollBy({ left: 390, behavior: 'smooth' }); });
-            prevBtn.addEventListener('click', () => { scroller.scrollBy({ left: -390, behavior: 'smooth' }); });
+            nextBtn.addEventListener('click', () => { scroller.scrollBy({ left: 400, behavior: 'smooth' }); });
+            prevBtn.addEventListener('click', () => { scroller.scrollBy({ left: -400, behavior: 'smooth' }); });
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
