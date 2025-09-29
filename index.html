@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIEG | Tarifaço dos EUA: Impactos e Cenários para a Indústria Goiana</title>
+    <title>FIEG | Infográfico Interativo: Tarifaço dos EUA</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
             --cor-destaque: #ffc107;
             --cor-texto: #333;
             --cor-texto-claro: #f8f9fa;
-            --cor-fundo: #f0f2f5;
+            --cor-fundo: #eef2f5;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,105 +25,188 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--cor-fundo);
             color: var(--cor-texto);
-            /* Background Gráfico com Textura */
-            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%23003366" fill-opacity="0.04"%3E%3Cpath opacity=".5" d="M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z"/%3E%3Cpath d="M6 5V0H5v5H0v1h5v94h1V6h94V5H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003366' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            overflow-x: hidden;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-
-        /* --- Cabeçalho --- */
+        .container { max-width: 90%; margin: 0 auto; padding: 30px 0; }
+        
         .page-header {
-            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('https://agenciacoradenoticias.go.gov.br/wp-content/uploads/2025/07/SECOM_CAIADO_COM_EMPRESARIOS_GOIANOS_MEDIDAS_CONTRA_TARIFACO_LUCAS_DIENER_E_CRISTIANO_BORGES1.jpeg') no-repeat center center;
-            background-size: cover;
-            color: var(--cor-texto-claro);
-            padding: 60px 40px;
             text-align: center;
-            border-radius: 12px;
-            margin: 20px auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
         }
-        .page-header img { height: 50px; margin-bottom: 20px; filter: brightness(0) invert(1); }
-        .page-header h1 { font-size: 2.8rem; font-weight: 800; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .page-header p { font-size: 1.2rem; max-width: 700px; margin: 15px auto 0; font-weight: 400; }
+        .page-header img { height: 50px; margin-bottom: 15px; }
+        .page-header h1 { font-size: 2.5rem; font-weight: 800; color: var(--cor-primaria-fieg); }
+        .page-header p { font-size: 1.1rem; color: #555; max-width: 800px; margin: 10px auto 0; }
 
-        /* --- Linha do Tempo Dinâmica --- */
-        .timeline {
+        .timeline-wrapper {
             position: relative;
-            padding: 40px 0;
+            width: 100%;
+            padding: 0 50px;
+        }
+        .timeline-scroller {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            padding: 30px 10px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+            scrollbar-width: thin;
+            scrollbar-color: var(--cor-secundaria-fieg) #ddd;
+        }
+        .timeline {
+            display: inline-flex;
+            position: relative;
+            padding-top: 50px; /* Space for date */
+            padding-bottom: 50px; /* Space for line */
         }
         .timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(var(--cor-secundaria-fieg), var(--cor-primaria-fieg));
-            border-radius: 2px;
-        }
-        .timeline-item {
-            margin-bottom: 40px;
-            position: relative;
-            padding-left: 60px;
-        }
-        .timeline-item::before {
-            content: attr(data-icon);
-            position: absolute;
+            bottom: 20px;
             left: 0;
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--cor-secundaria-fieg), var(--cor-primaria-fieg));
+            border-radius: 4px;
+        }
+        
+        .timeline-item {
+            display: inline-block;
+            vertical-align: top;
+            width: 320px;
+            margin: 0 25px;
+            white-space: normal;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .timeline-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            bottom: 13px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 22px;
+            height: 22px;
+            background: white;
+            border: 5px solid var(--cor-primaria-fieg);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .timeline-date {
+            position: absolute;
             top: 0;
-            width: 44px;
-            height: 44px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: var(--cor-primaria-fieg);
             color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px;
+            border-top: 6px solid var(--cor-secundaria-fieg);
+        }
+        .timeline-card .icon {
+            font-size: 2.5rem;
+            color: var(--cor-secundaria-fieg);
+            margin-bottom: 10px;
+        }
+        .timeline-card h2 { color: var(--cor-primaria-fieg); font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .timeline-card p { font-size: 0.95rem; line-height: 1.6; }
+        .timeline-card strong { color: var(--cor-primaria-fieg); font-weight: 700; }
+        .timeline-card img { width: 100%; border-radius: 8px; margin-top: 15px; }
+        
+        .modal-trigger {
+            background-color: var(--cor-primaria-fieg);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .modal-trigger:hover { background-color: var(--cor-secundaria-fieg); }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--cor-primaria-fieg);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .nav-button:hover { background-color: var(--cor-secundaria-fieg); }
+        .prev { left: 5px; }
+        .next { right: 5px; }
+
+        /* Modal Interativo */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 51, 102, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            border: 3px solid white;
-            box-shadow: 0 0 10px rgba(0, 51, 102, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
-        .timeline-card {
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content {
             background: white;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            border-left: 6px solid var(--cor-secundaria-fieg);
-            transition: transform 0.3s ease;
-        }
-        .timeline-card:hover { transform: translateY(-5px); }
-        .timeline-card h2 { color: var(--cor-primaria-fieg); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; }
-        .timeline-card .date { color: #777; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; }
-        .timeline-card p { font-size: 1rem; line-height: 1.7; }
-        .timeline-card strong { color: var(--cor-primaria-fieg); font-weight: 700; }
-        .timeline-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
-
-        /* --- Seção de Cenários --- */
-        .scenarios-section {
-            text-align: center;
-            padding: 40px 0;
-        }
-        .scenarios-section h2 { font-size: 2.2rem; color: var(--cor-primaria-fieg); font-weight: 700; margin-bottom: 30px; }
-        .scenarios-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .scenario-card {
-            background-color: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            text-align: left;
-            border-top: 6px solid;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            transform: translateY(-50px);
             transition: transform 0.3s ease;
         }
-        .scenario-card:hover { transform: translateY(-10px); }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .modal-content h3 { color: var(--cor-primaria-fieg); margin-bottom: 20px; font-size: 1.5rem;}
+        .modal-content ul { list-style: none; padding-left: 0; }
+        .modal-content li { margin-bottom: 15px; padding-left: 25px; position: relative; }
+        .modal-content li::before { content: '✓'; color: var(--cor-secundaria-fieg); position: absolute; left: 0; font-weight: bold; }
+        
+        /* Cenários */
+        .scenarios-section { text-align: center; padding: 40px 0; }
+        .scenarios-section h2 { font-size: 2.2rem; color: var(--cor-primaria-fieg); font-weight: 700; margin-bottom: 30px; }
+        .scenarios-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .scenario-card { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); text-align: left; border-top: 6px solid; }
         .scenario-card h3 { font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; }
         .scenario-card .icon { font-size: 2rem; margin-right: 15px; }
         .scenario-card.optimistic { border-color: var(--cor-secundaria-fieg); }
@@ -132,91 +215,164 @@
         .scenario-card.realistic h3 { color: #b8860b; }
         .scenario-card.pessimistic { border-color: #dc3545; }
         .scenario-card.pessimistic h3 { color: #dc3545; }
-
-        @media (max-width: 768px) {
-            .page-header h1 { font-size: 2rem; }
-            .timeline::before { left: 22px; }
-            .timeline-item { padding-left: 65px; }
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="page-header">
-            <img src="logo-fieg.png" alt="Logo FIEG">
-            <h1>Tarifaço dos EUA</h1>
-            <p>A cronologia dos fatos, os impactos para a indústria goiana e os cenários para o futuro</p>
+            <img src="https://www.fieg.com.br/esqueciminhasenha/img/marcaFIEG_azul.png" alt="Logo FIEG">
+            <h1>Infográfico: A Cronologia do Tarifaço</h1>
+            <p>Navegue pela linha do tempo para entender os impactos e cenários para a indústria goiana</p>
         </header>
 
-        <section class="timeline">
-            <div class="timeline-item" data-icon="🔍">
-                <div class="timeline-card">
-                    <p class="date">Meados de Julho de 2025</p>
-                    <h2>EUA Sinalizam Barreiras Comerciais</h2>
-                    <p>O governo norte-americano sinaliza publicamente a possibilidade de impor barreiras comerciais ao Brasil por motivações políticas, gerando apreensão imediata no setor industrial e iniciando um período de incerteza.</p>
-                </div>
-            </div>
+        <div class="timeline-wrapper">
+            <div class="timeline-scroller">
+                <div class="timeline">
+                    
+                    <div class="timeline-item" data-icon="🔍">
+                        <div class="timeline-date">Julho 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="icon">🏛️</div>
+                            <h2>EUA Sinalizam Barreiras</h2>
+                            <p>O governo norte-americano sinaliza publicamente a possibilidade de impor barreiras comerciais ao Brasil, gerando apreensão imediata no setor industrial.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-icon="🇬🇴">
+                        <div class="timeline-date">Final de Julho 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="icon">🗣️</div>
+                            <h2>Protagonismo de Goiás</h2>
+                            <p>Em uma ação de vanguarda, o <strong>Governo de Goiás convoca a FIEG</strong> e o setor produtivo para construir, em conjunto, uma resposta proativa à crise iminente.</p>
+                            <img src="https://agenciacoradenoticias.go.gov.br/wp-content/uploads/2025/07/SECOM_CAIADO_COM_EMPRESARIOS_GOIANOS_MEDIDAS_CONTRA_TARIFACO_LUCAS_DIENER_E_CRISTIANO_BORGES1.jpeg" alt="Reunião do Governo de Goiás com a indústria">
+                        </div>
+                    </div>
 
-            <div class="timeline-item" data-icon="🏛️">
-                <div class="timeline-card">
-                    <p class="date">Final de Julho de 2025</p>
-                    <h2>Pioneirismo de Goiás: Governo Ouve o Setor Produtivo</h2>
-                    <p>Em uma ação de vanguarda, o <strong>Governo de Goiás, liderado pelo Governador Ronaldo Caiado, convoca a FIEG e outras entidades do setor produtivo</strong> para uma reunião estratégica. O objetivo é ouvir as preocupações da indústria e construir, em conjunto, uma resposta proativa aos primeiros sinais da crise.</p>
-                    <img src="https://agenciacoradenoticias.go.gov.br/wp-content/uploads/2025/07/SECOM_CAIADO_COM_EMPRESARIOS_GOIANOS_MEDIDAS_CONTRA_TARIFACO_LUCAS_DIENER_E_CRISTIANO_BORGES1.jpeg" alt="Reunião do Governador Caiado com empresários goianos">
-                </div>
-            </div>
+                    <div class="timeline-item" data-icon="📜">
+                        <div class="timeline-date">Início de Agosto 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="icon">⚖️</div>
+                            <h2>Implementação do "Tarifaço"</h2>
+                            <p>Os EUA oficializam a sobretaxa que eleva a alíquota para 50%, causando a suspensão imediata de contratos e impactando diretamente a indústria de Goiás.</p>
+                        </div>
+                    </div>
 
-            <div class="timeline-item" data-icon="📜">
-                <div class="timeline-card">
-                    <p class="date">Início de Agosto de 2025</p>
-                    <h2>Implementação do "Tarifaço"</h2>
-                    <p>Os EUA oficializam e implementam a sobretaxa que eleva a alíquota para 50% sobre diversos produtos brasileiros. A medida causa a suspensão imediata de contratos e gera forte instabilidade no comércio exterior, impactando diretamente a indústria.</p>
-                </div>
-            </div>
+                    <div class="timeline-item" data-icon="🇧🇷">
+                        <div class="timeline-date">13 de Agosto 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="icon">📦</div>
+                            <h2>Governo Federal Reage</h2>
+                            <p>O Governo Federal lança o <strong>Plano Brasil Soberano</strong>, um pacote de medidas para mitigar os impactos, incluindo crédito emergencial e alívio fiscal.</p>
+                            <button class="modal-trigger" data-modal="modal-mp">Ver Detalhes da MP</button>
+                        </div>
+                    </div>
 
-            <div class="timeline-item" data-icon="🇬🇴">
-                <div class="timeline-card">
-                    <p class="date">Final de Agosto de 2025</p>
-                    <h2>Goiás Lança Fundo de Apoio, o Primeiro do Brasil</h2>
-                    <p>Consolidando seu protagonismo, o <strong>Governo de Goiás lança um fundo de R$ 628 milhões na B3</strong> para socorrer as empresas goianas. A medida, articulada com a FIEG, se torna a primeira iniciativa concreta de um estado brasileiro para mitigar os impactos, permitindo o uso de créditos de ICMS como garantia.</p>
-                </div>
-            </div>
+                    <div class="timeline-item" data-icon="🇬🇴">
+                        <div class="timeline-date">Final de Agosto 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="icon">💰</div>
+                            <h2>Goiás Lança Fundo de Apoio</h2>
+                            <p>Consolidando seu protagonismo, o <strong>Governo de Goiás lança o primeiro fundo do Brasil</strong>, de R$ 628 milhões, para socorrer as empresas goianas, em ação articulada com a FIEG.</p>
+                        </div>
+                    </div>
 
-            <div class="timeline-item" data-icon="🤝">
-                <div class="timeline-card">
-                    <p class="date">Início de Setembro de 2025</p>
-                    <h2>FIEG em Missão nos EUA pela Indústria</h2>
-                    <p>A <strong>FIEG integra a missão empresarial da CNI em Washington</strong> para defender a indústria goiana. A delegação se reúne com entidades do setor privado americano para construir alianças estratégicas e buscar caminhos para a retomada do diálogo, reforçando a importância do Brasil como parceiro comercial.</p>
-                    <img src="https://www.fieg.com.br/portais/files/0b5f896d-8609-4638-893a-f9c4dc84e19e.jpeg?contentDisposition=inline" alt="Delegação da CNI e FIEG em missão nos EUA">
-                </div>
-            </div>
+                    <div class="timeline-item" data-icon="🤝">
+                        <div class="timeline-date">Início de Setembro 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="icon">✈️</div>
+                            <h2>FIEG em Missão nos EUA</h2>
+                            <p>A <strong>FIEG integra a missão empresarial da CNI em Washington</strong>, defendendo a indústria goiana em reuniões estratégicas para buscar a retomada do diálogo.</p>
+                             <img src="https://www.fieg.com.br/portais/files/0b5f896d-8609-4638-893a-f9c4dc84e19e.jpeg?contentDisposition=inline" alt="Delegação da FIEG e CNI nos EUA">
+                        </div>
+                    </div>
 
-            <div class="timeline-item" data-icon="🇺🇳">
-                <div class="timeline-card">
-                    <p class="date">23 de Setembro de 2025</p>
-                    <h2>Sinalização de Diálogo na Assembleia da ONU</h2>
-                    <p>Durante um breve encontro na 80ª Assembleia Geral da ONU, os presidentes do Brasil e dos EUA conversam. O presidente americano anuncia publicamente que <strong>concordou em se encontrar com o presidente brasileiro na semana seguinte</strong> para discutir a questão, abrindo uma nova e crucial janela para a negociação diplomática.</p>
+                    <div class="timeline-item" data-icon="🇺🇳">
+                        <div class="timeline-date">23 de Setembro 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="icon">💬</div>
+                            <h2>Sinal de Diálogo na ONU</h2>
+                            <p>Durante a Assembleia Geral da ONU, os presidentes do Brasil e dos EUA conversam e <strong>agendam uma reunião para a semana seguinte</strong>, abrindo uma nova janela para a negociação.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </section>
+            <button class="nav-button prev">‹</button>
+            <button class="nav-button next">›</button>
+        </div>
 
         <section class="scenarios-section">
             <h2>A Reunião da Semana: 3 Cenários para o Futuro</h2>
             <div class="scenarios-container">
-                <div class="scenario-card optimistic">
-                    <h3><span class="icon">✅</span>Cenário Otimista</h3>
-                    <p>Há um acordo para a **retirada completa e imediata das tarifas**. O diálogo diplomático prevalece, e a relação comercial é restaurada. As exportações são normalizadas, e os planos de apoio (MP Brasil Soberano, Fundo de Goiás) atuam na recuperação das perdas já ocorridas.</p>
-                </div>
-                <div class="scenario-card realistic">
-                    <h3><span class="icon">🤝</span>Cenário Realista</h3>
-                    <p>Não há um acordo imediato, mas um **compromisso de meio-termo**. Pode incluir a redução parcial das tarifas ou a criação de quotas de isenção para produtos mais sensíveis. Grupos de trabalho são criados para negociar uma solução definitiva nos meses seguintes.</p>
-                </div>
-                <div class="scenario-card pessimistic">
-                    <h3><span class="icon">❌</span>Cenário Pessimista</h3>
-                    <p>Ocorre um **desacordo total**. As tarifas são mantidas, e o governo americano pode sinalizar uma futura majoração ou a inclusão de novos produtos na lista. O Brasil pode avançar com as medidas de reciprocidade, elevando a tensão e o risco de uma guerra comercial.</p>
-                </div>
+                <div class="scenario-card optimistic"><h3><span class="icon">✅</span>Otimista</h3><p>Acordo para a **retirada completa e imediata das tarifas**. O diálogo prevalece e a relação comercial é restaurada.</p></div>
+                <div class="scenario-card realistic"><h3><span class="icon">🤝</span>Realista</h3><p>**Compromisso de meio-termo**, com redução parcial das tarifas ou criação de quotas de isenção, e formação de grupos de trabalho.</p></div>
+                <div class="scenario-card pessimistic"><h3><span class="icon">❌</span>Pessimista</h3><p>**Desacordo total**, manutenção das tarifas e risco de escalada para uma guerra comercial com medidas de reciprocidade.</p></div>
             </div>
         </section>
     </div>
+
+    <div class="modal-overlay" id="modal-mp">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <h3>MP Brasil Soberano: 5 Pilares</h3>
+            <ul>
+                <li><strong>Crédito Emergencial:</strong> Linha de R$ 35 bilhões com juros reduzidos para exportadores, focando em pequenas e médias empresas.</li>
+                <li><strong>Compras Governamentais:</strong> Ampliação da compra de produtos das empresas afetadas para compensar perdas no mercado externo.</li>
+                <li><strong>Alívio no Caixa:</strong> Adiamento temporário do pagamento de tributos federais para as empresas mais prejudicadas.</li>
+                <li><strong>Garantias para Exportar:</strong> Reforma do Fundo de Garantia à Exportação (FGE) para dar mais segurança nas vendas internacionais.</li>
+                <li><strong>Contrapartida Obrigatória:</strong> Para receber o auxílio, a empresa deve se comprometer a manter seu quadro de funcionários.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scroller = document.querySelector('.timeline-scroller');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const modalTriggers = document.querySelectorAll('.modal-trigger');
+            const modals = document.querySelectorAll('.modal-overlay');
+            const closeButtons = document.querySelectorAll('.modal-close');
+
+            // Navegação horizontal
+            nextBtn.addEventListener('click', () => { scroller.scrollBy({ left: 370, behavior: 'smooth' }); });
+            prevBtn.addEventListener('click', () => { scroller.scrollBy({ left: -370, behavior: 'smooth' }); });
+
+            // Animação dos itens ao aparecer na tela
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            timelineItems.forEach(item => observer.observe(item));
+
+            // Funcionalidade do Modal
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const modalId = trigger.dataset.modal;
+                    document.getElementById(modalId).classList.add('active');
+                });
+            });
+            const closeModal = () => {
+                modals.forEach(modal => modal.classList.remove('active'));
+            };
+            closeButtons.forEach(button => button.addEventListener('click', closeModal));
+            modals.forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
