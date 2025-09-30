@@ -39,6 +39,17 @@
         .page-header h1 { font-size: 2.5rem; font-weight: 800; color: var(--cor-primaria-fieg); }
         .page-header p { font-size: 1.1rem; color: #555; max-width: 800px; margin: 10px auto 0; }
 
+        /* NOVA SEÇÃO DE INTRODUÇÃO */
+        .intro-section {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            text-align: justify;
+            border-left: 5px solid var(--cor-primaria-fieg);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
         .timeline-wrapper { position: relative; width: 100%; padding: 0 50px; }
         .timeline-scroller {
             overflow-x: auto;
@@ -53,7 +64,7 @@
         .timeline {
             display: inline-flex;
             align-items: center;
-            height: 500px; 
+            height: 520px; 
             position: relative;
         }
         .timeline::before {
@@ -71,11 +82,11 @@
         .timeline-item {
             display: inline-flex;
             align-items: stretch;
-            width: 420px;
+            width: 380px; 
             margin: 0 40px;
             white-space: normal;
             position: relative;
-            z-index: 2; /* Garante que o item fique acima da linha */
+            z-index: 2;
             opacity: 0;
             transform: scale(0.95);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -103,9 +114,13 @@
             border-top: 5px solid var(--cor-secundaria-fieg);
             padding: 25px;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 450px; 
         }
         .timeline-card h2 { color: var(--cor-primaria-fieg); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
-        .timeline-card p { font-size: 0.95rem; line-height: 1.6; }
+        .timeline-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: auto; }
         .timeline-card strong { color: var(--cor-primaria-fieg); font-weight: 700; }
         .timeline-card img { width: 100%; margin-top: 15px; }
         
@@ -161,6 +176,7 @@
             .next { right: -10px; }
             .timeline-item { width: 300px; margin: 0 15px; }
             .timeline { height: auto; padding-bottom: 50px; }
+            .timeline-card { min-height: 480px; }
         }
 
     </style>
@@ -169,19 +185,39 @@
     <div class="container">
         <header class="page-header">
             <img src="https://www.fieg.com.br/esqueciminhasenha/img/marcaFIEG_azul.png" alt="Logo FIEG">
-            <h1>Infográfico: A Cronologia do Tarifaço</h1>
+            <h1>A Cronologia do Tarifaço e os Impactos para Goiás</h1>
             <p>Navegue pela linha do tempo para entender os impactos e cenários para a indústria goiana</p>
         </header>
+
+        <section class="intro-section">
+            <p>A FIEG assumiu com protagonismo a busca por soluções para empresas goianas afetadas pelas medidas do governo norte-americano, que resultaram na majoração de tarifas para os produtos importados do Brasil. Enquanto intermediava o diálogo junto ao Governo de Goiás para a construção de saídas para as empresas mais impactadas, a FIEG esteve diretamente envolvida nas negociações em Washington, junto aos empresários industriais de todo o País. Além disso, é hoje o principal elo entre as indústrias e as soluções ofertadas nos níveis estadual e federal, promovendo seminários sobre o tema e disponibilizando um núcleo específico para dar suporte às empresas que desejam buscar crédito.</p>
+        </section>
 
         <div class="timeline-wrapper">
             <div class="timeline-scroller">
                 <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-tag">Início de 2025</div>
+                        <div class="timeline-card">
+                            <h2>O Início da Tensão</h2>
+                            <p>O presidente Donald Trump inicia seu mandato com uma forte retórica protecionista, sinalizando a intenção de rever acordos comerciais e utilizar tarifas como ferramenta de pressão política e econômica contra diversos países.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-tag">Abril de 2025</div>
+                        <div class="timeline-card">
+                            <h2>Primeira Alíquota</h2>
+                            <p>A primeira medida concreta contra o Brasil é anunciada: uma alíquota de 10% é aplicada sobre uma gama de produtos brasileiros, gerando um alerta no setor industrial e dando início às primeiras discussões sobre o tema.</p>
+                        </div>
+                    </div>
                     
                     <div class="timeline-item">
                         <div class="timeline-tag">Julho 2025</div>
                         <div class="timeline-card">
-                            <h2>EUA Sinalizam Barreiras</h2>
-                            <p>O governo norte-americano sinaliza publicamente a possibilidade de impor barreiras comerciais ao Brasil, gerando apreensão imediata no setor industrial.</p>
+                            <h2>EUA Sinalizam Majoração</h2>
+                            <p>O governo norte-americano sinaliza publicamente a possibilidade de uma forte majoração das tarifas, elevando a apreensão do setor industrial brasileiro.</p>
                         </div>
                     </div>
                     
