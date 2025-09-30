@@ -38,17 +38,64 @@
         .intro-section { max-width: 800px; margin: 0 auto 50px auto; background-color: #fff; padding: 30px; text-align: justify; border-left: 5px solid var(--cor-primaria-fieg); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
 
         .timeline-wrapper { position: relative; width: 100%; padding: 0 50px; }
-        .timeline-scroller { overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding: 40px 10px 50px 10px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--cor-secundaria-fieg) #ddd; }
-        .timeline { display: inline-flex; position: relative; padding-top: 40px; }
-        .timeline::before { content: ''; position: absolute; bottom: 20px; left: 0; height: 4px; width: 100%; background-color: #ccc; }
+        .timeline-scroller { overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding: 30px 10px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--cor-secundaria-fieg) #ddd; }
+        .timeline {
+            display: inline-flex;
+            align-items: center;
+            height: 520px; 
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: #ccc;
+            z-index: 1;
+        }
         
-        .timeline-item { display: inline-block; vertical-align: top; width: 360px; margin: 0 30px; white-space: normal; position: relative; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .timeline-item.is-visible { opacity: 1; transform: translateY(0); }
+        .timeline-item {
+            display: inline-flex;
+            align-items: stretch;
+            width: 380px; 
+            margin: 0 40px;
+            white-space: normal;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        .timeline-item.is-visible { opacity: 1; transform: scale(1); }
 
-        .timeline-marker { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: var(--cor-fundo); border: 4px solid var(--cor-primaria-fieg); z-index: 2; }
-        .timeline-date { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background-color: var(--cor-fundo); color: var(--cor-primaria-fieg); padding: 5px 15px; font-weight: 700; font-size: 0.9rem; border: 1px solid #ddd; z-index: 3; }
+        .timeline-tag {
+            background-color: var(--cor-primaria-fieg);
+            color: white;
+            padding: 10px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         
-        .timeline-card { background: white; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--cor-secundaria-fieg); padding: 25px; display: flex; flex-direction: column; min-height: 450px; }
+        .timeline-card {
+            background: white;
+            border-top: 5px solid var(--cor-secundaria-fieg);
+            padding: 25px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 450px; 
+        }
         .timeline-card-content { flex-grow: 1; }
         .timeline-card h2 { color: var(--cor-primaria-fieg); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
         .timeline-card p { font-size: 0.95rem; line-height: 1.6; }
@@ -58,7 +105,21 @@
         .modal-trigger { background-color: var(--cor-primaria-fieg); color: white; border: none; padding: 10px 15px; cursor: pointer; margin-top: 15px; font-weight: 600; transition: background-color 0.3s; }
         .modal-trigger:hover { background-color: var(--cor-secundaria-fieg); }
 
-        .nav-button { position: absolute; top: 50%; transform: translateY(-50%); background-color: var(--cor-primaria-fieg); color: white; border: none; width: 45px; height: 45px; font-size: 28px; cursor: pointer; z-index: 10; opacity: 0.8; transition: opacity 0.3s, background-color 0.3s; }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--cor-primaria-fieg);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.8;
+            transition: opacity 0.3s, background-color 0.3s;
+        }
         .nav-button:hover { background-color: var(--cor-secundaria-fieg); opacity: 1; }
         .prev { left: 5px; }
         .next { right: 5px; }
@@ -116,8 +177,7 @@
                 <div class="timeline">
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Início de 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Início de 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>O Início da Tensão</h2>
@@ -127,8 +187,7 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">2 de Abril de 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">2 de Abril de 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Primeira Alíquota</h2>
@@ -139,8 +198,7 @@
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-date">9 de Julho de 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">9 de Julho de 2025</div>
                         <div class="timeline-card">
                              <div class="timeline-card-content">
                                 <h2>"Tariff Letter" Presidencial</h2>
@@ -150,8 +208,7 @@
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-date">Fim de Julho 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Fim de Julho 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Protagonismo de Goiás</h2>
@@ -162,8 +219,7 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">30 de Julho de 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">30 de Julho de 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Implementação do Tarifaço</h2>
@@ -174,20 +230,18 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Agosto de 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Agosto de 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Governo Federal Reage</h2>
                                 <p>Com a entrada em vigor das tarifas, o Governo Federal lança o <strong>Plano Brasil Soberano</strong> e o BNDES abre as linhas de crédito para as empresas impactadas.</p>
                             </div>
-                            <button class="modal-trigger" data-modal="modal-federal">Ver Ações Federais</button>
+                            <button class="modal-trigger" data-modal="modal-federal">Saiba Mais</button>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Agosto de 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Agosto de 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Investigação Section 301</h2>
@@ -197,20 +251,18 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Fim de Agosto 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Fim de Agosto 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Goiás Lança Fundo de Apoio</h2>
                                 <p>Consolidando seu protagonismo, o <strong>Governo de Goiás lança o primeiro fundo do Brasil</strong> para socorrer as empresas goianas, em ação articulada com a FIEG.</p>
                             </div>
-                            <img src="https://agenciacoradenoticias.go.gov.br/wp-content/uploads/2025/08/Caiado-na-B3_Hegon-Correa-002.jpeg" alt="Governador de Goiás na B3 para lançamento do fundo">
+                             <img src="https://agenciacoradenoticias.go.gov.br/wp-content/uploads/2025/08/Caiado-na-B3_Hegon-Correa-002.jpeg" alt="Governador de Goiás na B3 para lançamento do fundo">
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Início de Setembro 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Início de Setembro 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>FIEG em Missão nos EUA</h2>
@@ -221,8 +273,7 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">23 de Setembro 2025</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">23 de Setembro 2025</div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Sinal de Diálogo na ONU</h2>
@@ -233,8 +284,7 @@
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-date">Exceções</div>
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-tag">Exceções</div>
                         <div class="timeline-card">
                              <div class="timeline-card-content">
                                 <h2>Produtos Isentos</h2>
