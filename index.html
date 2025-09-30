@@ -15,30 +15,52 @@
             --cor-secundaria-fieg: #009933; 
             --cor-texto: #212529;
             --cor-texto-claro: #f8f9fa;
-            --cor-fundo: #f4f7f9;
+            --cor-fundo-inicio: #eef2f5;
+            --cor-fundo-fim: #d9e2e9;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--cor-fundo);
             color: var(--cor-texto);
-            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003366' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm10 2c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm-20-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm10 2c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zM20 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm10 2c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zM0 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm10 2c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: linear-gradient(180deg, var(--cor-fundo-inicio) 0%, var(--cor-fundo-fim) 100%);
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .container { max-width: 90%; margin: 0 auto; padding: 30px 0; }
         
-        .page-header { text-align: center; margin-bottom: 40px; }
-        .page-header img { height: 50px; margin-bottom: 15px; }
-        .page-header h1 { font-size: 2.5rem; font-weight: 800; color: var(--cor-primaria-fieg); }
-        .page-header p { font-size: 1.1rem; color: #555; max-width: 800px; margin: 10px auto 0; }
+        .page-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .page-header img {
+            height: 70px; /* Logo Maior */
+            margin-right: 25px;
+        }
+        .header-text {
+            text-align: left;
+        }
+        .header-text h1 { font-size: 2.2rem; font-weight: 800; color: var(--cor-primaria-fieg); }
+        .header-text p { font-size: 1.1rem; color: #555; }
 
         .intro-section { max-width: 800px; margin: 0 auto 50px auto; background-color: #fff; padding: 30px; text-align: justify; border-left: 5px solid var(--cor-primaria-fieg); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
 
         .timeline-wrapper { position: relative; width: 100%; padding: 0 50px; }
-        .timeline-scroller { overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding: 30px 10px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--cor-secundaria-fieg) #ddd; }
+        .timeline-scroller {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            padding: 30px 10px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--cor-secundaria-fieg) #ddd;
+        }
         .timeline {
             display: inline-flex;
             align-items: center;
@@ -148,7 +170,9 @@
         .support-card.fieg h3 { color: #555; }
         
         @media (max-width: 768px) {
-            .page-header h1 { font-size: 2rem; }
+            .page-header { flex-direction: column; text-align: center; }
+            .page-header img { margin-right: 0; }
+            .header-text h1 { font-size: 2rem; }
             .timeline-wrapper { padding: 0 20px; }
             .nav-button { width: 35px; height: 35px; font-size: 20px; }
             .prev { left: -10px; }
@@ -164,8 +188,10 @@
     <div class="container">
         <header class="page-header">
             <img src="https://www.fieg.com.br/esqueciminhasenha/img/marcaFIEG_azul.png" alt="Logo FIEG">
-            <h1>A Cronologia do Tarifaço e os Impactos para Goiás</h1>
-            <p>Navegue pela linha do tempo para entender os impactos e cenários para a indústria goiana</p>
+            <div class="header-text">
+                <h1>A Cronologia do Tarifaço e os Impactos para Goiás</h1>
+                <p>Navegue pela linha do tempo para entender os impactos e cenários para a indústria goiana</p>
+            </div>
         </header>
 
         <section class="intro-section">
