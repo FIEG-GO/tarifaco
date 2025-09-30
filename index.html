@@ -38,64 +38,17 @@
         .intro-section { max-width: 800px; margin: 0 auto 50px auto; background-color: #fff; padding: 30px; text-align: justify; border-left: 5px solid var(--cor-primaria-fieg); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
 
         .timeline-wrapper { position: relative; width: 100%; padding: 0 50px; }
-        .timeline-scroller { overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding: 30px 10px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--cor-secundaria-fieg) #ddd; }
-        .timeline {
-            display: inline-flex;
-            align-items: center;
-            height: 520px; 
-            position: relative;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            height: 4px;
-            width: 100%;
-            background-color: #ccc;
-            z-index: 1;
-        }
+        .timeline-scroller { overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding: 40px 10px 50px 10px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--cor-secundaria-fieg) #ddd; }
+        .timeline { display: inline-flex; position: relative; padding-top: 40px; }
+        .timeline::before { content: ''; position: absolute; bottom: 20px; left: 0; height: 4px; width: 100%; background-color: #ccc; }
         
-        .timeline-item {
-            display: inline-flex;
-            align-items: stretch;
-            width: 380px; 
-            margin: 0 40px;
-            white-space: normal;
-            position: relative;
-            z-index: 2;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-        }
-        .timeline-item.is-visible { opacity: 1; transform: scale(1); }
+        .timeline-item { display: inline-block; vertical-align: top; width: 360px; margin: 0 30px; white-space: normal; position: relative; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .timeline-item.is-visible { opacity: 1; transform: translateY(0); }
 
-        .timeline-tag {
-            background-color: var(--cor-primaria-fieg);
-            color: white;
-            padding: 10px;
-            writing-mode: vertical-lr;
-            transform: rotate(180deg);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        .timeline-marker { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: var(--cor-fundo); border: 4px solid var(--cor-primaria-fieg); z-index: 2; }
+        .timeline-date { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background-color: var(--cor-fundo); color: var(--cor-primaria-fieg); padding: 5px 15px; font-weight: 700; font-size: 0.9rem; border: 1px solid #ddd; z-index: 3; }
         
-        .timeline-card {
-            background: white;
-            border-top: 5px solid var(--cor-secundaria-fieg);
-            padding: 25px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            min-height: 450px; /* PADRONIZAÇÃO DA ALTURA */
-        }
+        .timeline-card { background: white; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--cor-secundaria-fieg); padding: 25px; display: flex; flex-direction: column; min-height: 450px; }
         .timeline-card-content { flex-grow: 1; }
         .timeline-card h2 { color: var(--cor-primaria-fieg); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
         .timeline-card p { font-size: 0.95rem; line-height: 1.6; }
@@ -105,34 +58,21 @@
         .modal-trigger { background-color: var(--cor-primaria-fieg); color: white; border: none; padding: 10px 15px; cursor: pointer; margin-top: 15px; font-weight: 600; transition: background-color 0.3s; }
         .modal-trigger:hover { background-color: var(--cor-secundaria-fieg); }
 
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--cor-primaria-fieg);
-            color: white;
-            border: none;
-            width: 45px;
-            height: 45px;
-            font-size: 28px;
-            cursor: pointer;
-            z-index: 10;
-            opacity: 0.8;
-            transition: opacity 0.3s, background-color 0.3s;
-        }
+        .nav-button { position: absolute; top: 50%; transform: translateY(-50%); background-color: var(--cor-primaria-fieg); color: white; border: none; width: 45px; height: 45px; font-size: 28px; cursor: pointer; z-index: 10; opacity: 0.8; transition: opacity 0.3s, background-color 0.3s; }
         .nav-button:hover { background-color: var(--cor-secundaria-fieg); opacity: 1; }
         .prev { left: 5px; }
         .next { right: 5px; }
 
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 51, 102, 0.7); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
         .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal-content { background: white; padding: 30px; max-width: 600px; width: 90%; position: relative; transform: translateY(-50px); transition: transform 0.3s ease; }
+        .modal-content { background: white; padding: 30px; max-width: 700px; width: 90%; max-height: 90vh; overflow-y: auto; position: relative; transform: translateY(-50px); transition: transform 0.3s ease; }
         .modal-overlay.active .modal-content { transform: translateY(0); }
-        .modal-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; }
+        .modal-close { position: sticky; top: 0; right: 0; background: none; border: none; font-size: 24px; cursor: pointer; float: right; }
         .modal-content h3 { color: var(--cor-primaria-fieg); margin-bottom: 20px; font-size: 1.5rem; }
         .modal-content ul { list-style: none; padding-left: 0; }
         .modal-content li { margin-bottom: 15px; padding-left: 25px; position: relative; }
         .modal-content li::before { content: '✓'; color: var(--cor-secundaria-fieg); position: absolute; left: 0; font-weight: bold; }
+        .modal-content h4 { color: var(--cor-secundaria-fieg); margin-top: 20px; margin-bottom: 10px; font-size: 1.1rem; }
         
         .support-section { padding: 40px 0; }
         .support-section h2 { font-size: 2.2rem; color: var(--cor-primaria-fieg); font-weight: 700; margin-bottom: 30px; text-align: center; }
@@ -176,7 +116,8 @@
                 <div class="timeline">
 
                     <div class="timeline-item">
-                        <div class="timeline-tag">Início de 2025</div>
+                        <div class="timeline-date">Início de 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>O Início da Tensão</h2>
@@ -186,28 +127,31 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-tag">Abril de 2025</div>
+                        <div class="timeline-date">2 de Abril de 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Primeira Alíquota</h2>
-                                <p>A primeira medida concreta contra o Brasil é anunciada: uma alíquota de 10% é aplicada sobre uma gama de produtos brasileiros, gerando um alerta no setor industrial e dando início às primeiras discussões sobre o tema.</p>
+                                <p>A primeira medida concreta contra o Brasil é anunciada: uma alíquota adicional de 10% é aplicada sobre uma gama de produtos brasileiros, gerando um alerta no setor industrial e uma nota de repúdio do Itamaraty.</p>
                             </div>
                             <img src="https://live.staticflickr.com/65535/50334901833_6f3c35eaec_b.jpg" alt="Navios de carga em porto">
                         </div>
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-tag">Julho 2025</div>
+                        <div class="timeline-date">9 de Julho de 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
-                            <div class="timeline-card-content">
-                                <h2>EUA Sinalizam Majoração</h2>
-                                <p>O governo norte-americano sinaliza publicamente a possibilidade de uma forte majoração das tarifas, elevando a apreensão do setor industrial brasileiro.</p>
+                             <div class="timeline-card-content">
+                                <h2>"Tariff Letter" Presidencial</h2>
+                                <p>Através de declarações públicas e da chamada "tariff letter", o Presidente dos EUA indica a intenção de impor tarifas ainda mais altas, o que serviu como gatilho político para a escalada da crise.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-tag">Fim de Julho 2025</div>
+                        <div class="timeline-date">Fim de Julho 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Protagonismo de Goiás</h2>
@@ -218,40 +162,55 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-tag">Início de Agosto 2025</div>
+                        <div class="timeline-date">30 de Julho de 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Implementação do Tarifaço</h2>
-                                <p>Os EUA oficializam a sobretaxa que eleva a alíquota para 50%, causando a suspensão imediata de contratos e impactando a indústria de Goiás.</p>
+                                <p>É publicada a Ordem Executiva que impõe uma tarifa adicional de 40%, elevando a carga total para 50% sobre muitos produtos, com entrada em vigor em 6 de agosto. O Brasil reage, iniciando o pedido de consultas na OMC (DS640).</p>
                             </div>
                             <img src="https://www.infomoney.com.br/wp-content/uploads/2025/04/trump-quadro-tarifas-e1743677896301.jpg?quality=50&strip=all" alt="Painel de tarifas de importação dos EUA">
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-tag">13 de Agosto 2025</div>
+                        <div class="timeline-date">Agosto de 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Governo Federal Reage</h2>
-                                <p>O Governo Federal lança o <strong>Plano Brasil Soberano</strong>, um pacote de medidas para mitigar os impactos, incluindo crédito emergencial e alívio fiscal.</p>
+                                <p>Com a entrada em vigor das tarifas, o Governo Federal lança o <strong>Plano Brasil Soberano</strong> e o BNDES abre as linhas de crédito para as empresas impactadas.</p>
                             </div>
-                            <button class="modal-trigger" data-modal="modal-mp">Ver Detalhes da MP</button>
+                            <button class="modal-trigger" data-modal="modal-federal">Ver Ações Federais</button>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-tag">Fim de Agosto 2025</div>
+                        <div class="timeline-date">Agosto de 2025</div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-card-content">
+                                <h2>Investigação Section 301</h2>
+                                <p>Além das tarifas, os EUA abrem uma investigação da "Seção 301" contra o Brasil, alegando práticas comerciais "injustas", o que mobiliza a defesa jurídica do governo e das confederações empresariais.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Fim de Agosto 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Goiás Lança Fundo de Apoio</h2>
-                                <p>Consolidando seu protagonismo, o <strong>Governo de Goiás lança o primeiro fundo do Brasil</strong>, de R$ 628 milhões, para socorrer as empresas goianas, em ação articulada com a FIEG.</p>
+                                <p>Consolidando seu protagonismo, o <strong>Governo de Goiás lança o primeiro fundo do Brasil</strong> para socorrer as empresas goianas, em ação articulada com a FIEG.</p>
                             </div>
                             <img src="https://agenciacoradenoticias.go.gov.br/wp-content/uploads/2025/08/Caiado-na-B3_Hegon-Correa-002.jpeg" alt="Governador de Goiás na B3 para lançamento do fundo">
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-tag">Início de Setembro 2025</div>
+                        <div class="timeline-date">Início de Setembro 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>FIEG em Missão nos EUA</h2>
@@ -262,7 +221,8 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-tag">23 de Setembro 2025</div>
+                        <div class="timeline-date">23 de Setembro 2025</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                             <div class="timeline-card-content">
                                 <h2>Sinal de Diálogo na ONU</h2>
@@ -273,7 +233,8 @@
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-tag">Exceções</div>
+                        <div class="timeline-date">Exceções</div>
+                        <div class="timeline-marker"></div>
                         <div class="timeline-card">
                              <div class="timeline-card-content">
                                 <h2>Produtos Isentos</h2>
@@ -296,11 +257,13 @@
                 <div class="support-container">
                     <div class="support-card federal">
                         <h3>Apoio do Governo Federal</h3>
-                        <p>Através da <strong>MP Brasil Soberano</strong>, o governo federal disponibilizou um pacote de R$ 35 bilhões, incluindo linhas de crédito emergencial com juros reduzidos, alívio fiscal e reforma do Fundo de Garantia à Exportação (FGE).</p>
+                        <p>Através do <strong>Plano Brasil Soberano</strong>, o governo disponibilizou um pacote de R$ 40 bilhões, incluindo linhas de crédito do BNDES via FGE. As empresas podem verificar sua elegibilidade no portal do BNDES.</p>
+                        <button class="modal-trigger" data-modal="modal-federal">Saiba Mais</button>
                     </div>
                     <div class="support-card estadual">
                         <h3>Apoio do Governo de Goiás</h3>
                         <p>De forma pioneira, o estado lançou um <strong>fundo de R$ 628 milhões</strong>, permitindo que empresas impactadas utilizem créditos de ICMS como garantia para acessar liquidez e manter suas operações e empregos.</p>
+                         <button class="modal-trigger" data-modal="modal-estadual">Saiba Mais</button>
                     </div>
                     <div class="support-card fieg">
                         <h3>Suporte FIEG</h3>
@@ -311,16 +274,37 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="modal-mp">
+    <div class="modal-overlay" id="modal-federal">
         <div class="modal-content">
             <button class="modal-close">×</button>
-            <h3>MP Brasil Soberano: 5 Pilares</h3>
+            <h3>Apoio Federal: Plano Brasil Soberano</h3>
+            <p>O BNDES abriu protocolo para pedidos de crédito para empresas impactadas. O volume global é de R$ 40 bilhões.</p>
+            <h4>Pilares da MP 1.309/2025</h4>
             <ul>
-                <li><strong>Crédito Emergencial:</strong> Linha de R$ 35 bilhões com juros reduzidos para exportadores.</li>
+                <li><strong>Crédito Emergencial:</strong> Linha de R$ 30 bilhões via FGE com juros reduzidos.</li>
                 <li><strong>Compras Governamentais:</strong> Ampliação da compra de produtos das empresas afetadas.</li>
-                <li><strong>Alívio no Caixa:</strong> Adiamento temporário do pagamento de tributos federais.</li>
+                <li><strong>Alívio no Caixa:</strong> Adiamento do pagamento de tributos federais.</li>
                 <li><strong>Garantias para Exportar:</strong> Reforma do Fundo de Garantia à Exportação (FGE).</li>
-                <li><strong>Contrapartida Obrigatória:</strong> Manutenção do quadro de funcionários para receber o auxílio.</li>
+                <li><strong>Contrapartida Obrigatória:</strong> Manutenção do quadro de funcionários.</li>
+            </ul>
+             <h4>Como Acessar o Crédito BNDES</h4>
+            <ul>
+                <li><strong>Elegibilidade:</strong> Empresas que exportaram bens atingidos para os EUA entre jul/2024 e jun/2025. A checagem é feita no portal do BNDES com e-CNPJ.</li>
+                <li><strong>Modalidades:</strong> Incluem financiamento para Investimento, Bens de Capital, Giro Emergencial e Giro para Diversificação de Mercados.</li>
+                <li><strong>Passo a Passo:</strong> 1) Verificar elegibilidade online; 2) Procurar banco credenciado (ou o BNDES para grandes operações); 3) Apresentar documentos (DU-E, DFs, etc.); 4) Aguardar análise e liberação.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-estadual">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <h3>Apoio Estadual: Ação Pioneira de Goiás</h3>
+            <p>Em parceria com a FIEG, o Governo de Goiás lançou um pacote de medidas para a indústria local.</p>
+            <ul>
+                <li><strong>Fundo Creditório:</strong> Linha de crédito com estimativa de R$ 628 milhões, usando créditos de ICMS como garantia.</li>
+                <li><strong>Fundeq:</strong> Reativação do Fundo de Equalização para subsidiar encargos em operações de crédito.</li>
+                <li><strong>Fundo de Estabilização Econômica:</strong> Uso da reserva para garantir serviços essenciais, com contrapartida de manutenção de empregos.</li>
             </ul>
         </div>
     </div>
@@ -329,7 +313,7 @@
         <div class="modal-content">
             <button class="modal-close">×</button>
             <h3>Principais Produtos Isentos</h3>
-            <p>A ordem executiva isentou da sobretaxa 694 produtos brasileiros. Os principais, em termos de volume de exportação, são:</p>
+            <p>A ordem executiva isentou da sobretaxa quase 700 produtos brasileiros. Os principais, em termos de volume de exportação, são:</p>
             <ul>
                 <li>Petróleo e derivados</li>
                 <li>Aeronaves e suas partes</li>
